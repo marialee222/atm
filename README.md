@@ -42,4 +42,3 @@ Future improvements for the ATM App include:
 
 ### License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-![image](https://github.com/marialee222/atm/assets/150623001/aea2c180-ac4a-4707-8b8a-12e86e1804f3)
