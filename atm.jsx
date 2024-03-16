@@ -10,8 +10,6 @@ const ATMDeposit = ({ onChange, isDeposit, isValid }) => {
   );
 };
 
-
-
 const Account = () => {
   const [deposit, setDeposit] = React.useState(0);
   const [totalState, setTotalState] = React.useState(0);
@@ -19,7 +17,6 @@ const Account = () => {
   const [atmMode, setAtmMode] = React.useState('');
   const [validTransaction, setValidTransaction] = React.useState(false);
   const [error, setError] = React.useState('');
-
 
   let status = `Account Balance $ ${totalState}`;
 
@@ -39,7 +36,7 @@ const Account = () => {
     }
     setDeposit(amount);
   };
-  
+
   const handleSubmit = (event) => {
     let newTotal = isDeposit ? totalState + deposit : totalState - deposit;
     setTotalState(newTotal);
@@ -48,7 +45,6 @@ const Account = () => {
     document.getElementById('number-input').value = '';
     event.preventDefault();
   };
-
 
   const handleModeSelect = (event) => {
     setAtmMode(event.target.value);
@@ -76,7 +72,8 @@ const Account = () => {
             isDeposit={isDeposit}
             isValid={validTransaction}
           />
-        )} {error && <p className="error">{error}</p>}
+        )}
+        {error && <p className="error">{error}</p>} {/* Display error message if there's an error */}
       </>
     </form>
   );
