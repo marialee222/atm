@@ -20,7 +20,7 @@ Updates made to enhance user experience and functionality:
  - Ensured that the application's layout is responsive and adapts well to different screen sizes and devices.
 
 ## How to Run
-To run the ToDo App on your machine, follow these steps: 
+To run the ATM App on your machine, follow these steps: 
 
 	1. Clone the repository to your local machine. 
 	git clone https://github.com/marialee222/atm.git 
