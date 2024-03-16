@@ -7,8 +7,9 @@ Simulation link: [ATM App](https://marialee222.github.io/atm/)
 This ATM App allows you to conveniently perform banking transactions such as withdrawals and deposits, check your account balance, and manage your finances on-the-go. With a simple and user-friendly interface, you can access your funds securely and efficiently, making everyday banking tasks hassle-free. Whether you need cash quickly or want to deposit funds into your account, this app provides the flexibility and convenience you need to manage your finances anytime, anywhere.
 
 
-<img width="433" alt="atm" src="https://github.com/marialee222/atm/assets/150623001/ae5e77e0-6b52-4e81-8447-6ad5044e8d4a">
 
+
+<img width="433" alt="atm" src="https://github.com/marialee222/atm/assets/150623001/ae5e77e0-6b52-4e81-8447-6ad5044e8d4a">
 
 
 ### Improvements
