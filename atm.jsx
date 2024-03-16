@@ -1,6 +1,6 @@
 const ATMDeposit = ({ onChange, isDeposit, isValid }) => {
   const choice = ['Deposit', 'Cash Back'];
-  console.log(`ATM isDeposit: ${isDeposit}`);
+
   return (
     <label className="label huge">
       <h3> {choice[Number(!isDeposit)]}</h3>
@@ -10,44 +10,50 @@ const ATMDeposit = ({ onChange, isDeposit, isValid }) => {
   );
 };
 
+
+
 const Account = () => {
-  // let deposit = 0; // state of this transaction
   const [deposit, setDeposit] = React.useState(0);
   const [totalState, setTotalState] = React.useState(0);
-  const [isDeposit, setIsDeposit] = React.useState(true);
+  const [isDeposit, setIsDeposit] = React.useState(null); // Change initial state to null
   const [atmMode, setAtmMode] = React.useState('');
   const [validTransaction, setValidTransaction] = React.useState(false);
+  const [error, setError] = React.useState('');
 
-  let status = `Account Balance $ ${totalState} `;
-  console.log(`Account Rendered with isDeposit: ${isDeposit}`);
+
+  let status = `Account Balance $ ${totalState}`;
+
   const handleChange = (event) => {
-    console.log(Number(event.target.value));
-    if (Number(event.target.value) <= 0) {
-      return setValidTransaction(false);
-    }
-    if (atmMode === 'Cash Back' && Number(event.target.value) > totalState) {
+    const amount = Number(event.target.value);
+    if (amount <= 0) {
       setValidTransaction(false);
+      setError('');
+      return;
+    }
+    if (atmMode === 'Cash Back' && amount > totalState) {
+      setValidTransaction(false);
+      setError('Cashback amount cannot exceed the account balance.');
     } else {
       setValidTransaction(true);
+      setError('');
     }
-    setDeposit(Number(event.target.value));
+    setDeposit(amount);
   };
+  
   const handleSubmit = (event) => {
     let newTotal = isDeposit ? totalState + deposit : totalState - deposit;
     setTotalState(newTotal);
     setValidTransaction(false);
+    // Reset the input value
+    document.getElementById('number-input').value = '';
     event.preventDefault();
   };
 
+
   const handleModeSelect = (event) => {
-    console.log(event.target.value);
     setAtmMode(event.target.value);
     setValidTransaction(false);
-    if (event.target.value === 'Deposit') {
-      setIsDeposit(true);
-    } else {
-      setIsDeposit(false);
-    }
+    setIsDeposit(event.target.value === 'Deposit'); // Set isDeposit based on selected mode
   };
 
   return (
@@ -64,16 +70,16 @@ const Account = () => {
             Cash Back
           </option>
         </select>
-        {atmMode && (
+        {atmMode && ( // Render ATMDeposit component when atmMode is selected
           <ATMDeposit
             onChange={handleChange}
             isDeposit={isDeposit}
             isValid={validTransaction}
-          ></ATMDeposit>
-        )}
+          />
+        )} {error && <p className="error">{error}</p>}
       </>
     </form>
   );
 };
-// ========================================
+
 ReactDOM.render(<Account />, document.getElementById('root'));
