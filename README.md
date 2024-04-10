@@ -12,12 +12,15 @@ The ATM app allows users to simulate depositing or withdrawing cash. It offers a
 <img width="433" alt="atm" src="https://github.com/marialee222/atm/assets/150623001/ae5e77e0-6b52-4e81-8447-6ad5044e8d4a">
 
 
-### Improvements
+### Overall Flow and Improvements
 Updates made to enhance user experience and functionality: 
 
- - If there are any errors, such as an invalid input amount or exceeding the account balance for cash back transactions, an error message is displayed to the user.
- - Applied CSS styles to enhance the visual appearance of the application. The styles focus on creating a clean and minimalistic design.
- - Ensured that the application's layout is responsive and adapts well to different screen sizes and devices.
+ - Users interact with the application through a form.
+ - They select an action (Deposit or Cash Back) from a dropdown menu.
+ - Based on the selected action, the corresponding mode is set (isDeposit).
+ - Users input an amount and submit the form.
+ - The application validates the transaction and updates the account balance accordingly.
+ - Errors are displayed if there are any issues with the transaction.
 
 ## How to Run
 To run the ATM App on your machine, follow these steps: 
