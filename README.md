@@ -4,7 +4,7 @@
 Simulation link: [ATM App](https://marialee222.github.io/atm/)
 
 ## Description 
-This ATM App allows you to conveniently perform banking transactions such as withdrawals and deposits, check your account balance, and manage your finances on-the-go. With a simple and user-friendly interface, you can access your funds securely and efficiently, making everyday banking tasks hassle-free. Whether you need cash quickly or want to deposit funds into your account, this app provides the flexibility and convenience you need to manage your finances anytime, anywhere.
+The ATM app allows users to simulate depositing or withdrawing cash. It offers a form where users can select either a deposit or cashback operation, input the desired amount, and submit the transaction. The application's state is managed through React's useState hook, ensuring dynamic updates to the total account balance and transaction validation. Styling is handled using CSS, providing a clean and user-friendly interface.
 
 ###
 
