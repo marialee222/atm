@@ -25,15 +25,21 @@ Updates made to enhance user experience and functionality:
 ## How to Run
 To run the ATM App on your machine, follow these steps: 
 
-	1. Clone the repository to your local machine. 
+	1. First, clone the ATM repository to your local machine using the following command: 
 	git clone https://github.com/marialee222/atm.git 
 
-	2. Navigate to the project directory.
+	2. Navigate to the directory where you cloned the ATM repository in your terminal.
 	cd atm 
 
-	3. Open the index.html file in your preferred web browser.
+	3. Install the necessary dependencies by running:
+ 	npm install react react-dom
 
-	4. Start using the ATM!
+	4. Run the application:
+ 	npx babel --watch atm.jsx --out-file atm.js
+
+  	5. Open index.html in preferred browser.
+
+  	6. Try out the ATM app! 
 
 ## Roadmap of Future Improvements
 Future improvements for the ATM App include:
